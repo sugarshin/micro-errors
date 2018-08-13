@@ -1,5 +1,7 @@
 # micro-error
 
+[![CircleCI](https://circleci.com/gh/sugarshin/micro-error.svg?style=svg&circle-token=1c658fe9da795d5bd72050ca986a9370965bcc7b)](https://circleci.com/gh/sugarshin/micro-error)
+
 A Error Handling for ZEIT's [Micro](https://github.com/zeit/micro).
 
 ```bash
