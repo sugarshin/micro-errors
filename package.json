@@ -1,5 +1,5 @@
 {
-  "name": "micro-error",
+  "name": "micro-errors",
   "version": "1.0.0",
   "description": "A Error Handling for ZEIT's Micro",
   "main": "index.js",
@@ -9,7 +9,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/sugarshin/micro-error.git"
+    "url": "git+https://github.com/sugarshin/micro-errors.git"
   },
   "engines": {
     "node": ">7.6.0"
@@ -23,9 +23,9 @@
   "author": "Shingo Sato",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/sugarshin/micro-error/issues"
+    "url": "https://github.com/sugarshin/micro-errors/issues"
   },
-  "homepage": "https://github.com/sugarshin/micro-error#readme",
+  "homepage": "https://github.com/sugarshin/micro-errors#readme",
   "peerDependencies": {
     "micro": "^9.0.0"
   },
