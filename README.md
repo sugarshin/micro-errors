@@ -28,9 +28,8 @@ module.exports = handleErrors({ debug: true })(async (req, res) => {
 // {
 //   "type": "about:blank",
 //   "title": "Bad Request",
-//   "status": 404,
-//   "instance": "/foo",
-//   "detail": "Invalid ID format"
+//   "status": 400,
+//   "instance": "/foo/bar",
 // }
 ```
 
@@ -44,3 +43,4 @@ module.exports = handleErrors({ debug: true })(async (req, res) => {
 [license-url]: https://sugarshin.mit-license.org/
 [npm-image]: https://img.shields.io/npm/v/micro-errors.svg?style=flat-square
 [npm-url]: https://www.npmjs.org/package/micro-errors
+ 
