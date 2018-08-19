@@ -1,12 +1,11 @@
 const { parse: parseUrl } = require('url')
 const { send, createError } = require('micro')
 
-module.exports.createError = (code, title, original, { type, detail, data } = {}) => {
-  const error = createError(code, title, original)
-  error.type = type
+module.exports.createError = (code, title, originalError, type, details) => {
+  const error = createError(code, title, originalError)
   error.title = title
-  error.detail = detail
-  error.data = data
+  error.type = type || 'about:blank'
+  error.details = details
   return error
 }
 
@@ -31,19 +30,16 @@ module.exports.handleErrors = option => {
       }
 
       const payload = {
-        type: e.type || 'about:blank',
+        type: e.type,
         title: e.title,
         status: statusCode,
         instance: parseUrl(req.url).pathname,
       }
 
-      const detail = e.detail || e.message
-      if (detail) {
-        payload.detail = detail
-      }
+      const details = e.message ? Object.assign({ detail: e.message }, e.details) : e.details
 
       res.setHeader('Content-Type', 'application/problem+json')
-      send(res, statusCode, Object.assign({}, e.data, payload))
+      send(res, statusCode, Object.assign({}, details, payload))
     }
   }
 }
